@@ -692,7 +692,7 @@
 
     </div>
 </div>
-<audio autoplay loop controls style="display:none;">
+<audio autoplay loop muted controls style="display:none;">
   <source src="js/datos/entrada.mp3" type="audio/mpeg">
   Tu navegador no soporta el elemento de audio.
 </audio>
@@ -725,6 +725,7 @@
 
     function startAudio() {
       if (!audioStarted && audio) {
+        audio.muted = false; 
         audio.play().catch(err => {
           console.log("No se pudo reproducir el audio:", err);
         });
