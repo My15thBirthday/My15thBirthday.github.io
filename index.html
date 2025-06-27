@@ -61,7 +61,7 @@
     }
 
     // Ruta al archivo txt con los invitados
-    const archivoURL = 'datos/invitados.txt';
+    const archivoURL = 'js/datos/invitados.txt';
 
     // Obtener el código del invitado desde la URL
     const codBuscado = getParametroURL('codIV');
@@ -87,7 +87,7 @@
         }
       })
       .catch(error => {
-        document.getElementById("mensaje").textContent = "Error al cargar la información.";
+        document.getElementById("mensaje").textContent = "Estas cordialmente invitado <br> a mi fiesta de 15 años este sabado 5 de julio 2025 a las 9:30 pm.";
         console.error("Error:", error);
       });
   </script>
