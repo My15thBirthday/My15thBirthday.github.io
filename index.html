@@ -32,8 +32,8 @@
     <meta property="og:image" content="https://mixdesign.dev/themeforest/braxton/img/favicon/og-image.jpg">
     <!-- Facebook Metadata End -->
 
-    <!-- Template Styles Start
-    <link rel="stylesheet" href="css/loaders/loader.css"> -->
+    <!-- Template Styles Start-->
+    <link rel="stylesheet" href="css/loaders/loader.css"> 
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/main-jz.css">
@@ -106,10 +106,7 @@
         allowfullscreen>
     </iframe>
 </div>
-<audio autoplay loop controls style="display:none;">
-    <source src="js/datos/entrada.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
+
 <div class="content-background-jz">
 
     <!-- Loader Start -->
@@ -695,12 +692,32 @@
 
     </div>
 </div>
+<audio autoplay loop muted controls style="display:none;">
+  <source src="js/datos/entrada.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
+</audio>
     <!-- Load Scripts Start -->
     <script src="js/libs.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js"></script>
     <!-- Load Scripts End -->
-    
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const audio = document.querySelector('audio');
+
+    function playAudio() {
+      if (audio) {
+        audio.muted = false; // Desmutear si estaba muteado
+        audio.play().catch(err => {
+          console.error("Error al intentar reproducir el audio:", err);
+        });
+      }
+    }
+
+    window.addEventListener('click', playAudio, { once: true });
+    window.addEventListener('touchstart', playAudio, { once: true });
+  });
+</script>
   </body>
 
 </html>
