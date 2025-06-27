@@ -1,1 +1,12 @@
-
+{
+  "invitados": [
+    {"codInvitado": "i001", "invitado": "Samuel"},
+    {"codInvitado": "i002", "invitado": "Vanessa"},
+    {"codInvitado": "i003", "invitado": "Alfredo"},
+    {"codInvitado": "i004", "invitado": "Silvia"},
+    {"codInvitado": "i005", "invitado": "Yenny"},
+    {"codInvitado": "i006", "invitado": "Donny"},
+    {"codInvitado": "i007", "invitado": "Luana"},
+    {"codInvitado": "i008", "invitado": "Imacela"},
+  ]
+}
