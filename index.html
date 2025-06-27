@@ -54,43 +54,45 @@
   <!-- src="https://www.youtube.com/embed/fG_po4mdIgk?autoplay=1&loop=1&playlist=fG_po4mdIgk&controls=0&showinfo=0&rel=0"  -->
   <body>
 <script>
-    // Función para obtener el valor de un parámetro en la URL
-    function getParametroURL(nombre) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(nombre);
-    }
+  // Función para obtener el valor de un parámetro en la URL
+  function getParametroURL(nombre) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nombre);
+  }
 
-    // Ruta al archivo txt con los invitados
-    const archivoURL = 'js/datos/invitados.txt';
+  // Ruta al archivo txt con los invitados (ajustada según tu estructura)
+  const archivoURL = 'js/datos/invitados.txt';
 
-    // Obtener el código del invitado desde la URL
-    const codBuscado = getParametroURL('codIV');
+  // Obtener el código del invitado desde la URL
+  const codBuscado = getParametroURL('codIV');
 
-    fetch(archivoURL)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("No se pudo cargar el archivo de invitados");
-        }
-        return response.json();
-      })
-      .then(datos => {
-        // Buscar el invitado por codInvitado
-        const invitadoEncontrado = datos.invitados.find(inv => inv.codInvitado === codBuscado);
+  fetch(archivoURL)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar el archivo de invitados");
+      }
+      return response.json();
+    })
+    .then(datos => {
+      // Buscar el invitado por codInvitado
+      const invitadoEncontrado = datos.invitados.find(inv => inv.codInvitado === codBuscado);
 
-        // Mostrar mensaje personalizado o genérico
-        const mensajeElemento = document.getElementById("mensaje");
+      // Mostrar mensaje personalizado o genérico
+      const mensajeElemento = document.getElementById("mensaje");
 
-        if (invitadoEncontrado) {
-          mensajeElemento.textContent = `${invitadoEncontrado.invitado}, estás cordialmente invitado <br> a mi fiesta de 15 años este sabado 5 de julio 2025 a las 9:30 pm.`;
-        } else {
-          mensajeElemento.innerHTML = `Estás cordialmente invitado <br> a mi fiesta de 15 años este sabado 5 de julio 2025 a las 9:30 pm.`;
-        }
-      })
-      .catch(error => {
-        document.getElementById("mensaje").textContent = "Está cordialmente invitado <br> a mi fiesta de 15 años este sabado 5 de julio 2025 a las 9:30 pm.";
-        console.error("Error:", error);
-      });
-  </script>
+      if (invitadoEncontrado) {
+        // Usar innerHTML para que <br> funcione
+        mensajeElemento.innerHTML = `${invitadoEncontrado.invitado}, estás cordialmente invitado<br>a mi fiesta de 15 años este sábado 5 de julio 2025 a las 9:30 pm.`;
+      } else {
+        mensajeElemento.innerHTML = `Estás cordialmente invitado<br>a mi fiesta de 15 años este sábado 5 de julio 2025 a las 9:30 pm.`;
+      }
+    })
+    .catch(error => {
+      // También usamos innerHTML aquí para incluir el salto de línea
+      document.getElementById("mensaje").innerHTML = `Está cordialmente invitado<br>a mi fiesta de 15 años este sábado 5 de julio 2025 a las 9:30 pm.`;
+      console.error("Error:", error);
+    });
+</script>
 
 
     
