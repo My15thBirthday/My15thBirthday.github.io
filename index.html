@@ -82,14 +82,14 @@
 
       if (invitadoEncontrado) {
         // Usar innerHTML para que <br> funcione
-        mensajeElemento.innerHTML = `${invitadoEncontrado.invitado}, estás cordialmente invitado<br>a mi fiesta de 15 años este sábado 5 de julio 2025 a las 9:30 pm.`;
+        mensajeElemento.innerHTML = `${invitadoEncontrado.invitado}, estás cordialmente invitado<br>a mi fiesta de 15 años.<br> Sábado 5 de julio 2025 a las 9:30 pm`;
       } else {
-        mensajeElemento.innerHTML = `Estás cordialmente invitado<br>a mi fiesta de 15 años este sábado 5 de julio 2025 a las 9:30 pm.`;
+        mensajeElemento.innerHTML = `Estás cordialmente invitado<br>a mi fiesta de 15 años.<br> Sábado 5 de julio 2025 a las 9:30 pm.`;
       }
     })
     .catch(error => {
       // También usamos innerHTML aquí para incluir el salto de línea
-      document.getElementById("mensaje").innerHTML = `Está cordialmente invitado<br>a mi fiesta de 15 años este sábado 5 de julio 2025 a las 9:30 pm.`;
+      document.getElementById("mensaje").innerHTML = `Está cordialmente invitado<br>a mi fiesta de 15 años. <br> Sábado 5 de julio 2025 a las 9:30 pm.`;
       console.error("Error:", error);
     });
 </script>
@@ -315,7 +315,7 @@
               </svg>
               <span>DJ Carita</span>
             </p>
-            <h2 class="h2__title animate-in-up">Regreso especial de DJ Carita </h2>
+            <h2 class="h2__title animate-in-up">Regreso especial "DJ Carita" </h2>
           </div>
           <!-- Content Block - H2 Section Title End -->
 
@@ -395,8 +395,7 @@
                 <!-- About Me Description Start -->
                 <div class="col-12 col-xl-8 grid-item about-descr">
                   <p class="about-descr__text animate-in-up">
-                    bienbenido a mi fiesta de 15 años, <br>
-                    estas invitado para celebrar junto a mi gratos momentos que llevaremos en nuestros corazones por siempre,
+                    <br>
 
 
                   </p>
@@ -421,11 +420,11 @@
                 <div class="col-12 col-md-6 cards__item grid-item animate-card-2">
                   <div class="cards__card d-flex flex-column">
                     <div class="cards__descr">
-                      <h4 class="cards__title animate-in-up">Barra<br>libre</h4>
+                      <h4 class="cards__title animate-in-up">Sorteo<br>sorpresa</h4>
                       <div class="cards__tags d-flex flex-wrap animate-in-up">
                
                       </div>
-                      <p class="small cards__text animate-in-up">para ponerle sason tendremos.</p>
+                      <p class="small cards__text animate-in-up">Para nuestros queridos invitados.</p>
                     </div>
                     <div class="cards__image d-flex animate-in-up">
                       <img src="./img/demo/bebidasv2.png" alt="Service/Feature Image">
@@ -470,7 +469,7 @@
                       <h4 class="cards__title animate-in-up">Baileton.. </h4>
                       <div class="cards__tags d-flex flex-wrap animate-in-up">
                       </div>
-                      <p class="small cards__text animate-in-up">Buena musuca para bailar toda la noche.
+                      <p class="small cards__text animate-in-up">Buena música para bailar toda la noche.
                       </p>
                     </div>
                     <div class="cards__image d-flex animate-in-up">
@@ -478,6 +477,23 @@
                     </div>
                   </div>
                 </div>
+                <!-- services cards grid single item -->
+                <div class="col-12 col-md-6 cards__item grid-item animate-card-2">
+                  <div class="cards__card d-flex flex-column">
+                    <div class="cards__descr">
+                      <h4 class="cards__title animate-in-up">Piñata regalona</h4>
+                      <div class="cards__tags d-flex flex-wrap animate-in-up">
+               
+                      </div>
+                      <p class="small cards__text animate-in-up">no puede faltar la piñata...en efectivo</p>
+                    </div>
+                    <div class="cards__image d-flex animate-in-up">
+                      <img src="./img/demo/bebidasv2.png" alt="Service/Feature Image">
+                    </div>
+                  </div>
+                </div>
+
+                
     
               </div>
             </div>
@@ -502,9 +518,9 @@
             </p>
             <h2 class="h2__title animate-in-up">Agradecimientos</h2>
             <p class="h2__text animate-in-up">
-              Agredeso a dios, a mis padres y padrinos por hacer posible este evento tan especial,
-              a mis amigos y familiares por acompañarme en este día tan especial,
-              a todos los que hicieron posible este evento. muchas gracias por su apoyo y cariño.
+              Agradezco a Dios por guiar este camino, a mis padres, familiares y amigos por su amor y apoyo. <br>
+              Un especial agradecimiento a mis padrinos y a todos los que hicieron posible este momento tan especial. <br>
+              Este día quedará siempre en mi corazón.
             </p>
           </div>
           <!-- Content Block - H2 Section Title End -->
@@ -534,7 +550,7 @@
                 <div class="col-12 col-md-5">
                   <p class="small resume-lines__descr animate-in-up">Hoy es un día muy especial para mí, y no podría dejar pasar la oportunidad de agradecer de corazón a las personas que siempre han estado a mi lado: mis padres.<br>
                   Gracias por todo su amor, paciencia, apoyo y sacrificio. Por cada consejo, cada abrazo, cada sonrisa y también por cada regaño, porque sé que siempre lo hacen con amor y buscando lo mejor para mí.<br>
-                  Ustedes han sido mi ejemplo, mi refugio y mi fuerza en cada momento de mi vida. Hoy, al cumplir 15 años, siento que doy un paso importante hacia nuevas etapas, y me da mucha tranquilidad saber que siempre podré contar con ustedes.
+                  </p>
                 </div>
               </div>
               <!-- education single item -->
@@ -550,9 +566,8 @@
                 <div class="col-12 col-md-5">
                   <p class="small resume-lines__descr animate-in-up">Un día inolvidable para mí, y no podría dejar de agradecer a mis padrinos, quienes han sido una parte muy importante para la celebración de este momento tan especial.
                   <br>
-                  Gracias por su apoyo, por su cariño y por estar presentes no solo hoy, sino también en distintos momentos de mi vida.
-                  <br>
-                  Agradezco de corazón todo lo que han hecho para hacer realidad este sueño. Este día será inolvidable gracias a ustedes. ¡Muchas gracias por todo </p>
+                  
+                  </p>
                 </div>
               </div>
               <!-- education single item -->
