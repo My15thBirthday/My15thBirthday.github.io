@@ -53,6 +53,47 @@
   
   <!-- src="https://www.youtube.com/embed/fG_po4mdIgk?autoplay=1&loop=1&playlist=fG_po4mdIgk&controls=0&showinfo=0&rel=0"  -->
   <body>
+<script>
+    // Función para obtener el valor de un parámetro en la URL
+    function getParametroURL(nombre) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(nombre);
+    }
+
+    // Ruta al archivo txt con los invitados
+    const archivoURL = 'datos/invitados.txt';
+
+    // Obtener el código del invitado desde la URL
+    const codBuscado = getParametroURL('codIV');
+
+    fetch(archivoURL)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("No se pudo cargar el archivo de invitados");
+        }
+        return response.json();
+      })
+      .then(datos => {
+        // Buscar el invitado por codInvitado
+        const invitadoEncontrado = datos.invitados.find(inv => inv.codInvitado === codBuscado);
+
+        // Mostrar mensaje personalizado o genérico
+        const mensajeElemento = document.getElementById("mensaje");
+
+        if (invitadoEncontrado) {
+          mensajeElemento.textContent = `${invitadoEncontrado.invitado}, estás cordialmente invitado <br> a mi fiesta de 15 años este sabado 5 de julio 2025 a las 9:30 pm.`;
+        } else {
+          mensajeElemento.innerHTML = `Estás cordialmente invitado <br> a mi fiesta de 15 años este sabado 5 de julio 2025 a las 9:30 pm.`;
+        }
+      })
+      .catch(error => {
+        document.getElementById("mensaje").textContent = "Error al cargar la información.";
+        console.error("Error:", error);
+      });
+  </script>
+
+
+    
 <div class="video-background">
     <iframe 
         src="https://www.youtube.com/embed/fG_po4mdIgk?autoplay=1&loop=1&playlist=fG_po4mdIgk&controls=0&showinfo=0&rel=0&mute=1" 
@@ -224,7 +265,7 @@
           <!-- Headline Start -->
           <div id="headline" class="headline d-flex align-items-start flex-column" data-speed="1">
             
-            <h1 class="headline__title animate-headline">Acompañame,<br>celebremos juntos mis 15 años los espero.</h1>
+            <h1 class="headline__title animate-headline" id="mensaje">Estas cordialmente invitado <br> a mi fiesta de 15 años este sabado 5 de julio 2025 a las 9:30 pm.</h1>
             <div class="headline__btnholder d-flex flex-column flex-sm-row">
 
              
