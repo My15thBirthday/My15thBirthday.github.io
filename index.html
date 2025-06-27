@@ -100,7 +100,7 @@
 <div class="video-background">
     <iframe 
         src="https://www.youtube.com/embed/fG_po4mdIgk?autoplay=1&loop=1&playlist=fG_po4mdIgk&controls=0&showinfo=0&rel=0&mute=1" 
-
+        frameborder="0"
         title="Video de fondo"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
@@ -715,9 +715,12 @@
     }
 
     window.addEventListener('click', playAudio, { once: true });
+    window.addEventListener("mousedown", playAudio, { once: true });
+    window.addEventListener("touchstart", playAudio, { once: true });
     window.addEventListener('touchstart', playAudio, { once: true });
   });
 </script>
+    <!--
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const audio = document.querySelector('audio');
@@ -742,7 +745,7 @@
     window.addEventListener('mousemove', startAudio, { once: true });
     window.addEventListener('touchstart', startAudio, { once: true });
   });
-</script>
+</script>-->
 
     
   </body>
