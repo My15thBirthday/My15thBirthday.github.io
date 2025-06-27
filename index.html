@@ -692,7 +692,7 @@
 
     </div>
 </div>
-<audio autoplay loop muted controls style="display:none;">
+<audio autoplay loop controls style="display:none;">
   <source src="js/datos/entrada.mp3" type="audio/mpeg">
   Tu navegador no soporta el elemento de audio.
 </audio>
@@ -718,6 +718,32 @@
     window.addEventListener('touchstart', playAudio, { once: true });
   });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const audio = document.querySelector('audio');
+    let audioStarted = false;
+
+    function startAudio() {
+      if (!audioStarted && audio) {
+        audio.play().catch(err => {
+          console.log("No se pudo reproducir el audio:", err);
+        });
+        audioStarted = true;
+      }
+    }
+
+    // Activar audio al hacer scroll
+    window.addEventListener('scroll', function () {
+      startAudio();
+    });
+
+    // Opcional: también iniciar si el usuario mueve el mouse o hace click
+    window.addEventListener('mousemove', startAudio, { once: true });
+    window.addEventListener('touchstart', startAudio, { once: true });
+  });
+</script>
+
+    
   </body>
 
 </html>
